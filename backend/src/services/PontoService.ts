@@ -10,14 +10,16 @@ export class PontoService {
     async addPonto(chave:any, tipoValor:any) {
         await prisma.ponto.create ({
             data: {
-                chave,
-                tipoValor,
+                chave: chave,
+                tipoValor: tipoValor,
             }
         })
     }
 
     async listarPontos(chave:any, tipoValor:any):Promise<PontoDTO[]> {
-        const listaPontos: Ponto[] = await prisma.ponto.findMany({where: { chave, tipoValor }});
+
+        const tipo = parseInt(tipoValor);
+        const listaPontos: Ponto[] = await prisma.ponto.findMany({where: { chave: chave, tipoValor: tipo }});
         const listaPontosDTO: PontoDTO[] = [];
 
         listaPontos.forEach((val) => {

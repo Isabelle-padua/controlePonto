@@ -9,7 +9,7 @@ export class UsuarioService {
 
     async buscarPelaChave(chave: any) {
 
-        const usuarioExistente:Usuario = await prisma.usuario.findUnique({where: { chave }});
+        const usuarioExistente:Usuario = await prisma.usuario.findUnique({where: { chave: chave }});
 
         if(!usuarioExistente) {
             const usu:Usuario = await prisma.usuario.create ({

@@ -5,8 +5,8 @@ const ItemListaComponent = (item: any) => {
 
     return (
         <div className="itemListaContainer">
-            <text className="textoData">{item.item.data}</text>
-            <text className="textoHora">{item.item.hora}</text>
+            <text className="textoData">{item.item.dataHora}</text>
+            <text className="textoHora">{item.item.horaHora}</text>
         </div>
     );
 };

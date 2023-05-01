@@ -1,26 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./style.css"
-import { UsuarioService } from "../../services/UsuarioService";
 import axios from "axios";
 
 const ButtonComponent = ({chave}: any) => {
     const navigate = useNavigate(); 
 
-    async function testar() {
-        console.log("TENTOOOU")
+    const [chaveUsu, setChaveUsu] = useState('');
+
+    async function funcaoBotao() {
+        salvarChave();
+    }
+
+    async function salvarChave() {
+        console.log("entou salvarrr")
         const response = await axios.post("http://localhost:3333/usuario", {
             chave: chave,
         });
 
-        console.log(response)
+        setChaveUsu(response.data.chave);
+        console.log(response);
 
-        let path = `/pontos`; 
+        let path = `/pontosEntrada/` + chave; 
         navigate(path);
     }
-    return (
 
-        <button onClick={testar} className="buttonComponent">
+    return (
+        <button onClick={funcaoBotao} className="buttonComponent">
             Confirmar
         </button>
     );

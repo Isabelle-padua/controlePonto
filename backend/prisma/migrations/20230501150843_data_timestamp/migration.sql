@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "Ponto" ALTER COLUMN "dataHora" SET DATA TYPE TIMESTAMPTZ(2);

@@ -18,6 +18,6 @@ model Usuario {
 model Ponto{
   id String @id @default(uuid())
   chave String
-  dataHora DateTime @default(now())
+  dataHora DateTime @default(now()) @db.Timestamptz
   tipoValor Int
 }

@@ -24,8 +24,9 @@ router.post('/addPonto', (request, response) => {
 })
 
 router.get("/listaPontos", (request, response) => {
-    const { chave, tipoValor } = request.body;
+    const {chave, tipoValor} = request.query; 
 
+    //console.log(request.query)
     pontoService.listarPontos(chave, tipoValor).then((pontos) => {
         return response.status(200).json(pontos);
     })

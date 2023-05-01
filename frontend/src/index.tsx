@@ -4,7 +4,8 @@ import App from './App';
 import './index.css'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from './routes/home/Home';
-import Ponto from './routes/ponto/Ponto';
+import PontoEntrada from './routes/pontoEntrada/PontoEntrada';
+import PontoSaida from './routes/pontoSaida/PontoSaida';
 
 const router = createBrowserRouter([
   {
@@ -16,8 +17,12 @@ const router = createBrowserRouter([
         element: <Home />
       },
       {
-        path: "/pontos",
-        element: <Ponto />
+        path: "/pontosEntrada/:chave",
+        element: <PontoEntrada />
+      },
+      {
+        path: "/pontosSaida/:chave",
+        element: <PontoSaida />
       },
     ]
   }

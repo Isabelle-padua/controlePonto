@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./home.css";
 import ButtonComponent from "../../components/buttonComponent/ButtonComponent";
 
 const Home = () => {
+    
     const [chave, setChave] = useState('');
+
+    
 
     const teste = (chave:any) => {
         setChave(chave);
