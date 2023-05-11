@@ -14,7 +14,7 @@ const Home = () => {
 
     return (
         <div className="containerHome">
-            <h1 className="logo">Ponto <span className="nomeLogo">Ilumeo</span></h1>
+            <h1 className="logo">Controle <span className="nomeLogo">Ponto</span></h1>
 
             <div className="inputComponent">
                 <input type="text" placeholder="Código do usuário" className="inputChave" onChange={event => (teste(event.target.value))}/>
